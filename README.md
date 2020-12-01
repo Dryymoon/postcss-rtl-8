@@ -25,6 +25,13 @@
 Generates RTL rules with flipped properties.
 Use one file for both directions!
 
+## WARNING THIS IS A TEMPORARY FORK
+
+This is a very temporary, lightly maintained fork of postcss-rtl. I wouldn't use it if I were you.
+
+This fork will live until either this PR https://github.com/vkalinichev/postcss-rtl/pull/73 is accepted or I get the projects we forked this for migrated over to rtlcss.
+
+
 * [Examples](#examples)
     * [Simple properties](#simple-properties)
     * [Animations](#animations)
