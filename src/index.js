@@ -66,7 +66,7 @@ module.exports = (options = {}) => {
 
     if (prop) {
       ltrDecls.push(ltrifyDecl(decl, keyframes));
-      const {value} = rtlifyDecl(decl.clone({prop}), keyframes);
+      const {value} = rtlifyDecl(decl.clone({prop, raws: {}}), keyframes);
       const clone = decl.clone({value});
       rtlDecls.push(clone);
       return true;
@@ -78,7 +78,7 @@ module.exports = (options = {}) => {
   const isRuleIgnored = handleIgnores(options.removeComments);
 
   return {
-    postcssPlugin: 'postcss-dark-theme-class',
+    postcssPlugin: 'postcss-rtl',
     Once(css) {
       // collect @keyframes
       css.walk((rule) => {
@@ -118,9 +118,7 @@ module.exports = (options = {}) => {
           ltrDecls.push(ltrifyDecl(decl, keyframes));
 
           // Create RTL declaration with replacement value and add.
-          const rtlClonedDecl = decl.clone({
-            value,
-          });
+          const rtlClonedDecl = decl.clone({value});
           rtlClonedDecl.raws.value = {
             value,
             raw: value,

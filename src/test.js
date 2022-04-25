@@ -306,10 +306,10 @@ test('Should respect multiline values', t => run(t,
   }`));
 
 test('rtl:as: directive', t => run(t,
-  ':root { --padding /* rtl:as:padding */: 1px 2px 3px 4px }',
+  ':root { --test-padding /* rtl:as:padding */: 1px 2px 3px 4px }',
 
-  '[dir=ltr]:root { --padding /* rtl:as:padding */: 1px 2px 3px 4px }'
-+ '[dir=rtl]:root { --padding /* rtl:as:padding */: 1px 4px 3px 2px }'));
+  '[dir=ltr]:root { --test-padding /* rtl:as:padding */: 1px 2px 3px 4px }'
++ '[dir=rtl]:root { --test-padding /* rtl:as:padding */: 1px 4px 3px 2px }'));
 
 test('should ignore ignored @import', t => run(t,
   '/* rtl:begin:ignore */'
